@@ -1,2 +1,3 @@
-# ReactProject
-This is my first  react project with different components 
+# My First react project.
+Built with material design components
+Checkout the materials at https://www.material-ui.com/
