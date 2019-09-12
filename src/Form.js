@@ -12,7 +12,7 @@ class Form extends Component{
             <TextField margin="normal" label="Name" id="name" type="text" />
             <TextField margin="normal" label="Email" id="email" type="email" />
             <TextField margin="normal" label="Address" id="address" type="text" />
-            <TextField margin="normal" defaultValue="Some message here" rowMax={4} id="message" />
+            <TextField margin="normal" defaultValue="Some message here" multiline rows={4} id="message" />
             <br />
             <Button variant="contained" color="primary" size="medium">Send</Button>
             {'    '}
