@@ -33,22 +33,43 @@
 }
 
 .myform-div{
-  width: 90%;
-  display: flex;
-  /* justify-content: center; */
-  margin: 3px 0px;
-  padding: 20px 20px;
+  width: 450px;
+  align-content: center;
+  margin: 3px auto;
+  padding: 20px 30px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.05);
+}
+
+.myform-div h1{
+  text-align-last: center;
 }
  
 #name, #email, #address, #message{
-  width: 350px;
+  width: 420px;
 }
 
 .appbar{
   background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
 }
 
-.btn-send{
-  background: linear-gradient(45deg, #2196F3 30%, #21CBF3 90%);
+
+@media (max-width: 567px){
+ 
+  .myform-div{
+    width: 88%;
+    /* display: flex; */
+    justify-content: center;
+    margin: 3px 0px;
+    padding: 20px 20px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.05);
+  }
+   
+  .myform-div h1{
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  #name, #email, #address, #message{
+    width: 360px;
+  }
 }

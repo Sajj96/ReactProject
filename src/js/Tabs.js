@@ -6,10 +6,9 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Form from './Form.js';
-import PhoneIcon from '@material-ui/icons/Phone';
-import HowToRegIcon from '@material-ui/icons/HowToReg';
-import PersonIcon from '@material-ui/icons/Person';
+import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
+import ViewModuleOutlinedIcon from '@material-ui/icons/ViewModuleOutlined';
+import ImageGrid from './ImageGrid.js';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -44,10 +43,17 @@ function a11yProps(index) {
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    padding: '20px',
-    width: 500,
-    margin: '10px auto',
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: '#212121',
+  },
+  tabsindicator:{
+    backgroundColor: 'white',
+    verticalAlign: 'text-bottom',
+  },
+  alltabs:{
+    flexDirection: 'row',
+  },
+  tab:{
+    display: 'grid',
   },
 }));
 
@@ -61,21 +67,22 @@ export default function SimpleTabs() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" className="appbar">
-        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Sign In" {...a11yProps(0)} icon={<PersonIcon />} />
-          <Tab label="Contact" {...a11yProps(1)} icon={<PhoneIcon />} />
-          <Tab label="Sign Up" {...a11yProps(2)} icon={<HowToRegIcon />} />
+      <AppBar position="static" >
+        <Tabs value={value} onChange={handleChange} 
+        aria-label="simple tabs example" 
+        variant="standard" maxWidth="sm" 
+        className={classes.alltabs} 
+        centered 
+        classes={{indicator:classes.tabsindicator}}>
+          <Tab label="POSTS" {...a11yProps(0)} icon={<ViewModuleOutlinedIcon className={classes.tabicon}/> } className={classes.tab} />
+          <Tab label="TAGGED" {...a11yProps(1)} icon={<AssignmentIndIcon className={classes.tabicon} />} className={classes.tab} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Item One
+        <ImageGrid />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Form />
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
+        
       </TabPanel>
     </div>
   );
